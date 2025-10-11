@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 body,
 html {
     height: 100%;
     width: 100%;
+    scroll-behavior: smooth;
 }
-
 .navbar {
     position: fixed;
     top: 0;
@@ -18,25 +20,48 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
-/* hero section */
 
+/* Hero base */
 .hero {
     position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./assets/smiling-fisherman.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -10;
-    background-attachment: fixed;
+    height: 200vh; /* double height for scroll hold effect */
 }
 
+.hero::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("./assets/smiling-fisherman.jpg") center/cover no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Text container */
+.hero-overlay-content {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(-50%, -50%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-overlay-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .logo-container {
     display: flex;
     justify-content: center;
@@ -61,63 +86,53 @@ html {
     width: 60px;
 }
 
-/* overlay */
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-2 {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    height: 50vh;
+    background-image: url("./assets/smiling-fisherman.jpg") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hero-content h1 {
-    font-size: 4rem;
-    color: white;
-    margin-bottom: 30px;
-}
-
-.hero-content button {
-    padding: 12px 20px;
-    margin-top: 20px;
-    background: #eef0f1;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hero-content button:hover {
-    color: #005fd1;
-}
-
-footer{
-
-    background-image: url('./assets/net-capture.jpg');
+.hero-3 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/Oman-fish-market-1-1920x960.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
 .footer-contents {
     padding: 30px;
     display: flex;
+
     justify-content: space-around;
     align-items: center;
 }
 
-ul li {
+.footer-links ul {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.footer-links li {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+}
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
 }
 
 .copyright {
@@ -125,9 +140,86 @@ ul li {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #3f3f38;
 }
 
+.contact-us-container {
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./assets/pexels-nata-7454148.jpg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-attachment: fixed;
+    padding: 20px;
+
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 60px 20px;
+    background-color: #15181b6e;
+    border-radius: 6px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-us-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.contact-us-form input,
+textarea {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.contact-us-form input:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us-form button:hover {
+    background-color: #0056b3;
+}
+#responseMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+}
 /* responiveness */
 @media (max-width: 768px) {
     .hero_content h1 {
@@ -136,4 +228,122 @@ ul li {
     .hero_content p {
         font-size: 1rem;
     }
+}
+
+
+/* ----------- Responsive Design ----------- */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .logo-container img {
+    width: 80px;
+  }
+
+  .nav-button-container img {
+    width: 50px;
+  }
+
+  .contact-us-container {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .contact-us-logo img {
+    width: 180px;
+    margin-bottom: 25px;
+  }
+
+  .contact-us-form {
+    width: 90%;
+  }
+
+  .footer-contents {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links ul {
+    column-count: 2;
+    text-align: center;
+  }
+
+  .social-media {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .hero-overlay-content h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .hero-overlay-content p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .hero-overlay-content button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .hero-3-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-3-content p {
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .contact-us-form {
+    width: 95%;
+    padding: 30px 15px;
+  }
+
+  .contact-us-form input,
+  .contact-us-form textarea {
+    font-size: 14px;
+  }
+
+  .footer-contents {
+    padding: 20px;
+  }
+
+  .footer-links ul {
+    column-count: 1;
+  }
+
+  .copyright p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large screens (desktop widescreen) */
+@media (min-width: 1400px) {
+  .hero-overlay-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-overlay-content p {
+    font-size: 1.5rem;
+  }
+
+  .contact-us-form {
+    width: 40%;
+  }
 }
