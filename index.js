@@ -95,6 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
             responseDiv.style.color = "red";
             return;
         }
+        if (name.length < 3) {
+            responseDiv.textContent = "⚠️ Please enter a valid name.";
+            responseDiv.style.color = "red";
+            return;
+        }
+        if (message.length < 6) {
+            responseDiv.textContent = "⚠️ Please enter a valid message.";
+            responseDiv.style.color = "red";
+            return;
+        }
 
         try {
             responseDiv.textContent = "⏳ Sending...";
