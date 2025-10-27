@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rak fishes</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>northernseafoods</title>
+    <link rel="icon" type="image/png" href="./assets/logo-solo-png.png" />
+    <link rel="preload" as="image" href="./assets/smiling-fisherman.webp">
+
+
+    <link rel="stylesheet" href="./index.min.css">
 </head>
 
 <body>
@@ -13,7 +17,7 @@
         <nav class="navbar">
 
             <div class=" logo-container">
-                <img src="./assets/logo.svg" alt="comapny-log0">
+                <img id="logo" src="./assets/complete-logo-svg.svg" alt="comapny-log0">
             </div>
             <!-- <div class="nav-button-container">
                 <img src="./assets/Burger.svg" alt="nav-button">
@@ -37,8 +41,7 @@
                 <li><a href="#team">OUR TEAM</a></li>
                 <li><a href="#partners">OUR PARTNERS</a></li>
                 <li><a href="#contact">CONTACT US</a></li>
-                <li><a href="#contact">CONTACT US</a></li>
-                <li><a href="#contact">CONTACT US</a></li>
+
             </ul>
         </div>
 
@@ -47,37 +50,30 @@
     <section class="hero">
         <div class="overlay"></div>
         <div class="hero-overlay-content">
-            <h1>want it fresh?</h1>
-            <p>we can deliver it to you kitce</p>
-            <button>contact us now</button>
+            <h1>want your fish fresh?</h1>
+            <p>we can deliver it to you kitchen</p>
+            <button><a href="#contact">contact us now</a></button>
         </div>
     </section>
     <!-- banner two -->
     <section class="hero-2">
-        <!-- <div class="overlay"></div>
-        <div class="hero-2-content">
-            <h1>Corporate Catering</h1>
-            <p>Our culinary masters create authentic cuisines like European, Indian, Pakistani, Filipino, Thai, Arabic,
-                and more. Our chefs excel in recreating the cuisines from diverse culinary cultures and eating.</p>
-            <button>Know more</button>
-        </div> -->
+
 
     </section>
 
     <section class="hero-3">
         <div class="hero-3-content">
 
-            <h1>coorporate catering</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem magnam maxime vero velit dolores
-                nobis culpa sequi? Debitis fugit illum unde, odit numquam atque aperiam itaque nobis esse? Vitae, omnis.
+            <h1>Taste the True Flavour of the Coast</h1>
+            <p>Locally caught, expertly cleaned, and packed with freshness — straight from our boats to your kitchen.
             </p>
         </div>
     </section>
 
-    <section class="contact-us-container">
+    <section class="contact-us-container" id="contact">
 
         <div class="contact-us-logo">
-            <img src="./assets/contact-us-logo.svg" alt="">
+            <img src="./assets/contact-us-logo.svg" alt="contact-us" loading="lazy">
         </div>
         <div class="contact-us-form">
             <form id="contactForm">
@@ -113,27 +109,28 @@
         <div class="footer-contents">
             <div class="footer-links">
                 <ul>
-                    <li>ABOUT US</li>
-                    <li>OUR SERVICES</li>
-                    <li>ABOUT US</li>
-                    <li>OUR STANDARDS</li>
-                    <li>OUR LOGISTICS</li>
-                    <li>OUR OTHER SERVICES</li>
-                    <li>OUR TEAM</li>
-                    <li>OUR PARTNERS</li>
-                    <li>CAREER</li>
-                    <li>CONTACT US</li>
+                    <li><a href="#services">OUR SERVICES</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#standards">OUR STANDARDS</a></li>
+                    <li><a href="#logistics">OUR LOGISTICS</a></li>
+                    <li><a href="#services">OUR OTHER SERVICES</a></li>
+                    <li><a href="#ourTeam">OUR TEAM</a></li>
+                    <li><a href="#partners">OUR PARTNERS</a></li>
+                    <li><a href="#career">CAREER</a></li>
+                    <li>
+                        <a href="#contact">CONTACT US</a>
+                    </li>
                 </ul>
             </div>
             <div class="social-media">
-                <img src="./assets/Facebook.svg" alt="facebook">
-                <img src="./assets/instagram.svg" alt="instagram">
-                <img src="./assets/whatsapp.svg" alt="watsapp">
+                <img src="./assets/Facebook.svg" alt="facebook" loading="lazy">
+                <img src="./assets/instagram.svg" alt="instagram" loading="lazy">
+                <img src="./assets/whatsapp.svg" alt="watsapp" loading="lazy">
             </div>
         </div>
         <div class="copyright">
 
-            <p>&copy; 2025 Rakfishes. All Rights reserved</p>
+            <p>&copy; 2025 northernseafoods. All Rights reserved</p>
 
         </div>
 
@@ -141,6 +138,6 @@
     </footer>
 
 </body>
-<script src="./index.js"></script>
+<script src="./index.min.js" defer></script>
 
 </html>

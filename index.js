@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", () => {
         const hero = document.querySelector(".hero");
         const text = document.querySelector(".hero-overlay-content");
+        const overlay = document.querySelector(".overlay");
 
         const scrollY = window.scrollY;
         const heroHeight = hero.offsetHeight;
@@ -45,10 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
             text.style.opacity = 1;
             text.style.transform = "translateY(0)";
             text.classList.add("visible");
+            overlay.classList.add("visible");
+            
         } else {
             text.style.opacity = 0;
             text.style.transform = "translateY(30px)";
             text.classList.remove("visible");
+            overlay.classList.remove("visible");
         }
 
         // Faster fade out for hero background
