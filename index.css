@@ -240,7 +240,7 @@ html {
 
 .hero-overlay-content button {
     margin-top: 10px;
-    padding: 16px 40px;
+    padding: 10px 20px;
     font-size: 1rem;
     background: #011e3d;
     color: white;
@@ -432,8 +432,8 @@ footer a:hover {
 @media (max-width: 992px) {
     .hero::before {
         position: absolute;
-        background-attachment: scroll;
-        height: 200vh;
+        background-attachment: fixed;
+        height: 100vh;
     }
     .navbar {
         padding: 10px 20px;
@@ -496,7 +496,7 @@ footer a:hover {
 
       .hero::before {
         position: absolute;
-        background-attachment: scroll;
+        background-attachment: fixed;
         height: 200vh;
     }
     .hero-3 {
