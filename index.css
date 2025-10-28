@@ -275,7 +275,7 @@ html {
 }
 
 .hero-3 {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("./assets/Oman-fish-market-1-1920x960.jpg");
     display: flex;
     align-items: center;
@@ -311,7 +311,7 @@ html {
 
 /* Contact Section */
 .contact-us-container {
-    height: 120vh;
+    min-height: 120vh;
     width: 100%;
     display: flex;
     justify-content: space-around;
